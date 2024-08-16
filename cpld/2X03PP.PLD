@@ -1,0 +1,159 @@
+Name     2X03PP ;
+PartNo   00 ;
+Date     08/07/2024 ;
+Revision 01 ;
+Designer IZ8DWF ;
+Company  IZ8DWF ;
+Assembly None ;
+Location  ;
+Device   f1504isptqfp44 ;
+
+PROPERTY ATMEL {pin_keep OFF} ; /* Disables pin-keeper circuits */
+
+/* 03 custom is a 6 bits wide, 4 bits deep FIFO with configurable 
+      depth from 0 (transparent I to O) to 4 clocks.
+      Input and output clocks are the same signal (rising edge) */
+
+/* On Pole Position video PCB there're two cascaded 03 customs, but
+   only 4 bits are used, the other two inputs of 5L are grounded and
+   the other two inputs of 6L are connected to the outputs of 5L that
+   correspond to the grounded inputs */
+
+/* This PLD only implements 2 x 4 bits wide FIFOs */
+
+/* *************** INPUT PINS *********************/
+PIN    8  = I10      ; /* 5L input side */ 
+PIN   10  = I11      ; /* 5L input side */ 
+PIN   12  = I12      ; /* 5L input side */ 
+PIN   11  = I13      ; /* 5L input side */ 
+PIN   43  = QSL10    ; /* 5L last FF input select bit 0 */
+PIN   44  = QSL11    ; /* 5L last FF input select bit 1 */
+PIN   37  = QSL21    ; /* 6L last FF input select bit 1 */
+PIN   34  = QSL20    ; /* 6L last FF input select bit 0 */
+PIN   23  = out_sel2 ; /* 6L output select pin  */ 
+PIN   39  = out_sel1 ; /* 5L output select pin  */ 
+PIN   40  = clk       ; /*  clock rising active edge  */ 
+PIN   19  = I23      ; /* 6L input side */
+PIN   20  = I22      ; /* 6L input side */
+PIN   21  = I21      ; /* 6L input side */
+PIN   22  = I20      ; /* 6L input side */
+
+/* *************** OUTPUT PINS *********************/
+PIN    6  = O10     ; /* 5L output side */
+PIN    5  = O11     ; /* 5L output side */
+PIN    3  = O12     ; /* 5L output side */
+PIN    2  = O13     ; /* 5L output side */
+PIN   28  = O23     ; /* 6L output side */
+PIN   30  = O22     ; /* 6L output side */
+PIN   31  = O21     ; /* 6L output side */
+PIN   33  = O20     ; /* 6L output side */
+
+
+/* *************** PINNODES    *********************/
+/* NEVER enable .oe in "node" FFs */
+
+PINNODE    = one10   ; /* first tap FF       */ 
+PINNODE    = one11   ; /* first tap FF       */ 
+PINNODE    = one12   ; /* first tap FF       */ 
+PINNODE    = one13   ; /* first tap FF       */ 
+
+PINNODE    = one20   ; /* first tap FF       */ 
+PINNODE    = one21   ; /* first tap FF       */ 
+PINNODE    = one22   ; /* first tap FF       */ 
+PINNODE    = one23   ; /* first tap FF       */ 
+
+PINNODE    = two10   ; /* second tap FF       */ 
+PINNODE    = two11   ; /* second tap FF       */ 
+PINNODE    = two12   ; /* second tap FF       */ 
+PINNODE    = two13   ; /* second tap FF       */ 
+
+PINNODE    = two20   ; /* second tap FF       */ 
+PINNODE    = two21   ; /* second tap FF       */ 
+PINNODE    = two22   ; /* second tap FF       */ 
+PINNODE    = two23   ; /* second tap FF       */ 
+
+PINNODE   = thr10   ; /* third tap FF       */ 
+PINNODE    = thr11   ; /* third tap FF       */ 
+PINNODE    = thr12   ; /* third tap FF       */ 
+PINNODE    = thr13   ; /* third tap FF       */ 
+
+PINNODE    = thr20   ; /* third tap FF       */ 
+PINNODE    = thr21   ; /* third tap FF       */ 
+PINNODE    = thr22   ; /* third tap FF       */ 
+PINNODE    = thr23   ; /* third tap FF       */ 
+
+PINNODE    = fou10   ; /* last tap FF       */ 
+PINNODE    = fou11   ; /* last tap FF       */ 
+PINNODE    = fou12   ; /* last tap FF       */ 
+PINNODE    = fou13   ; /* last tap FF       */ 
+
+PINNODE  = fou20;
+PINNODE  = fou21;
+PINNODE  = fou22;
+PINNODE  = fou23;
+
+field I1=[I13..I10];
+field O1=[O13..O10];
+
+field I2=[I23..I20];
+field O2=[O23..O20];
+
+field ONE1=[one13..one10];
+field ONE2=[one23..one20];
+
+field TWO1=[two13..two10];
+field TWO2=[two23..two20];
+
+field THR1=[thr13..thr10];
+field THR2=[thr23..thr20];
+
+FIELD FOU1=[fou13..fou10];
+FIELD FOU2=[fou20..fou23];
+
+FIELD D1=[d13..d10];
+FIELD D2=[d23..d20];
+
+/* all taps get the same clock signal */
+ONE1.ck = clk;
+ONE2.ck = clk;
+TWO1.ck = clk;
+TWO2.ck = clk;
+THR1.ck = clk;
+THR2.ck = clk;
+FOU1.ck = clk;
+FOU2.ck = clk;
+
+/* first tap input always gets the input data */
+ONE1.d = I1;
+ONE2.d = I2;
+
+/* second tap input always gets the first tap output */
+
+TWO1.d = ONE1;
+TWO2.d = ONE2;
+
+/* third tap input always gets the second tap output */
+
+THR1.d = TWO1;
+THR2.d = TWO2;
+
+/* last tap inputs depends on QSLxx value */
+
+D1 =      (!QSL10 & !QSL11 & I1)
+        # (!QSL10 & QSL11 & ONE1)
+        # (QSL10 & !QSL11 & TWO1)
+        # (QSL10 & QSL11 & THR1);
+
+D2  =      (!QSL20 & !QSL21 & I2)
+        # (!QSL20 & QSL21 & ONE2)
+        # (QSL20 & !QSL21 & TWO2)
+        # (QSL20 & QSL21 & THR2);
+
+FOU1.d = D1;
+FOU2.d = D2;
+
+/* output tap depends on out_selx */
+O1 =   (!out_sel1 & D1)
+     # (out_sel1 & FOU1);
+O2 =   (!out_sel2 & D2)
+     # (out_sel2 & FOU2);

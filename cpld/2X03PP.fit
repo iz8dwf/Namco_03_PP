@@ -1,0 +1,657 @@
+Atmel ATF1504AS Fitter Version 1.8.7.8 ,running Sat Jul 13 15:34:44 2024
+
+
+fit1504 Z:\HOME\FRANK\PROGETTI\NAMCO_03PP\CPLD\2X03PP.tt2 -CUPL -dev P1504T44 -JTAG ON
+
+
+****** Initial fitting strategy and property ******
+ Pla_in_file = 2X03PP.tt2
+ Pla_out_file = 2X03PP.tt3
+ Jedec_file = 2X03PP.jed
+ Vector_file = 2X03PP.tmv
+ verilog_file = 2X03PP.vt
+ Time_file = 
+ Log_file = 2X03PP.fit
+ err_file = 
+ Device_name = TQFP44
+ Module_name = 
+ Package_type = TQFP
+ Preassign_file = 
+ Property_file = 
+ Sleep_mode = 
+ Preassignment = 
+ Security_mode = OFF
+ Pin_keep_mode = OFF
+ Dedicated_input_clock = 
+ Dedicated_input_reset = 
+ Dedicated_input_oe = 
+ supporter = CUPL
+ optimize = ON
+ Soft_buffer = 
+ Xor_synthesis = OFF
+ Foldback_logic =  on
+ Expander = 
+ Cascade_logic = OFF
+ Dedicated_input = 
+ Output_fast = OFF
+ *******************************
+ Power down pin 1 = OFF
+ Power down pin 2 = OFF
+ power_reset = OFF
+ JTAG = ON
+ TDI pullup = OFF
+ TMS pullup = OFF
+ MC_power = OFF
+ Open_collector = OFF
+ ITD0 = ON
+ ITD1 = ON
+ ITD2 = ON
+ Fast_inlatch = off
+ *******************************
+---------------------------------------------------------
+ Fitter_Pass 1, Preassign = KEEP, LOGIC_DOUBLING : OFF 
+ ... 
+
+Performing global Output Enable pin assignments ...
+
+Performing global pin assignments ...
+--------------------------------------
+
+
+
+Final global control pins assignment (if applicable)...
+-------------------------------------------------------
+clk assigned to pin  40
+
+
+
+Performing input pin pre-assignments ...
+------------------------------------
+clk assigned to pin  40
+QSL21 assigned to pin  37
+out_sel1 assigned to pin  39
+
+Attempt to place floating signals ...
+------------------------------------
+O10 is placed at pin 6 (MC 1)
+thr12 is placed at feedback node 602 (MC 2)
+O11 is placed at pin 5 (MC 3)
+O12 is placed at pin 3 (MC 4)
+O13 is placed at pin 2 (MC 5)
+thr11 is placed at feedback node 606 (MC 6)
+thr10 is placed at feedback node 607 (MC 7)
+TDI is placed at pin 1 (MC 8)
+one12 is placed at feedback node 608 (MC 8)
+one13 is placed at feedback node 609 (MC 9)
+one11 is placed at feedback node 610 (MC 10)
+QSL11 is placed at pin 44 (MC 11)
+one10 is placed at feedback node 611 (MC 11)
+fou12 is placed at feedback node 612 (MC 12)
+fou13 is placed at feedback node 613 (MC 13)
+QSL10 is placed at pin 43 (MC 14)
+fou10 is placed at feedback node 614 (MC 14)
+fou11 is placed at feedback node 615 (MC 15)
+thr13 is placed at feedback node 616 (MC 16)
+thr22 is placed at feedback node 617 (MC 17)
+thr20 is placed at feedback node 618 (MC 18)
+thr23 is placed at feedback node 619 (MC 19)
+thr21 is placed at feedback node 620 (MC 20)
+I12 is placed at pin 12 (MC 21)
+one23 is placed at feedback node 621 (MC 21)
+one22 is placed at feedback node 622 (MC 22)
+one20 is placed at feedback node 623 (MC 23)
+I13 is placed at pin 11 (MC 24)
+one21 is placed at feedback node 624 (MC 24)
+I11 is placed at pin 10 (MC 25)
+two13 is placed at feedback node 625 (MC 25)
+two10 is placed at feedback node 626 (MC 26)
+two12 is placed at feedback node 627 (MC 27)
+two11 is placed at feedback node 628 (MC 28)
+fou23 is placed at feedback node 629 (MC 29)
+I10 is placed at pin 8 (MC 30)
+fou21 is placed at feedback node 630 (MC 30)
+fou20 is placed at feedback node 631 (MC 31)
+TMS is placed at pin 7 (MC 32)
+fou22 is placed at feedback node 632 (MC 32)
+I23 is placed at pin 19 (MC 35)
+I22 is placed at pin 20 (MC 36)
+I21 is placed at pin 21 (MC 37)
+I20 is placed at pin 22 (MC 40)
+out_sel2 is placed at pin 23 (MC 41)
+two23 is placed at feedback node 644 (MC 44)
+two22 is placed at feedback node 645 (MC 45)
+two21 is placed at feedback node 647 (MC 47)
+TCK is placed at pin 26 (MC 48)
+two20 is placed at feedback node 648 (MC 48)
+O23 is placed at pin 28 (MC 51)
+O22 is placed at pin 30 (MC 52)
+O21 is placed at pin 31 (MC 53)
+TDO is placed at pin 32 (MC 56)
+O20 is placed at pin 33 (MC 57)
+QSL20 is placed at pin 34 (MC 62)
+
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                o                                
+                                u                                
+                                t                                
+                 Q  Q           _     Q        Q                 
+                 S  S           s     S        S                 
+                 L  L     V  c  e     L  G     L                 
+                 1  1     C  l  l     2  N     2                 
+                 1  0     C  k  1     1  D     0                 
+               ____________________________________              
+              /  44 43 42 41 40 39 38 37 36 35 34  \             
+         TDI |  1                                33 | O20        
+         O13 |  2                                32 | TDO        
+         O12 |  3                                31 | O21        
+         GND |  4                                30 | O22        
+         O11 |  5                                29 | VCC        
+         O10 |  6            ATF1504             28 | O23        
+         TMS |  7          44-Lead TQFP          27 |            
+         I10 |  8                                26 | TCK        
+         VCC |  9                                25 |            
+         I11 | 10                                24 | GND        
+         I13 | 11                                23 | out_sel2   
+             |   12 13 14 15 16 17 18 19 20 21 22   |            
+              \____________________________________/             
+                 I           G  V     I  I  I  I                 
+                 1           N  C     2  2  2  2                 
+                 2           D  C     3  2  1  0                 
+
+
+
+VCC = Supply Voltage pin which must be connected to (5.0V or 3.0V)
+
+GND = GND pin which must be connected to ground
+
+TMS,TDI,TDO,TDI = JTAG pins which must reserved for the JTAG interface
+
+NC = Unused I/O pins which must be unconnected on the board
+
+Universal-Interconnect-Multiplexer assignments
+------------------------------------------------
+FanIn assignment for block A [23]
+{
+I12,I10,I13,I11,
+QSL11,QSL10,
+fou12,fou13,fou10,fou11,
+one11,one13,one10,out_sel1,one12,
+thr12,thr11,two13,thr10,two11,two12,two10,thr13,
+}
+Multiplexer assignment for block A
+QSL11			(MC18	P)   : MUX 0		Ref (A11p)
+one11			(MC6	FB)  : MUX 1		Ref (A10fb)
+one13			(MC5	FB)  : MUX 3		Ref (A9fb)
+I12			(MC22	P)   : MUX 5		Ref (B21p)
+I10			(MC20	P)   : MUX 6		Ref (B30p)
+fou12			(MC8	FB)  : MUX 9		Ref (A12fb)
+one10			(MC7	FB)  : MUX 11		Ref (A11fb)
+thr12			(MC1	FB)  : MUX 14		Ref (A2fb)
+I13			(MC23	P)   : MUX 15		Ref (B24p)
+thr11			(MC2	FB)  : MUX 20		Ref (A6fb)
+two13			(MC13	FB)  : MUX 21		Ref (B25fb)
+thr10			(MC3	FB)  : MUX 22		Ref (A7fb)
+fou13			(MC9	FB)  : MUX 23		Ref (A13fb)
+two11			(MC16	FB)  : MUX 25		Ref (B28fb)
+fou10			(MC10	FB)  : MUX 27		Ref (A14fb)
+fou11			(MC11	FB)  : MUX 31		Ref (A15fb)
+QSL10			(MC17	P)   : MUX 32		Ref (A14p)
+two12			(MC15	FB)  : MUX 33		Ref (B27fb)
+I11			(MC21	P)   : MUX 34		Ref (B25p)
+two10			(MC14	FB)  : MUX 35		Ref (B26fb)
+out_sel1		(MC19	FB)  : MUX 36		Ref (GCLR)
+thr13			(MC12	FB)  : MUX 37		Ref (A16fb)
+one12			(MC4	FB)  : MUX 38		Ref (A8fb)
+
+FanIn assignment for block B [22]
+{
+I21,I20,I23,I22,
+QSL20,QSL21,
+one11,one22,one20,one13,one23,one10,one21,one12,
+two21,two20,two22,thr20,thr22,two23,thr23,thr21,
+}
+Multiplexer assignment for block B
+one11			(MC3	FB)  : MUX 1		Ref (A10fb)
+one22			(MC10	FB)  : MUX 2		Ref (B22fb)
+I21			(MC19	P)   : MUX 3		Ref (C37p)
+one20			(MC11	FB)  : MUX 4		Ref (B23fb)
+one13			(MC2	FB)  : MUX 5		Ref (A9fb)
+two21			(MC15	FB)  : MUX 7		Ref (C47fb)
+one23			(MC9	FB)  : MUX 8		Ref (B21fb)
+two20			(MC16	FB)  : MUX 9		Ref (C48fb)
+one10			(MC4	FB)  : MUX 11		Ref (A11fb)
+I20			(MC22	P)   : MUX 15		Ref (C40p)
+two22			(MC14	FB)  : MUX 17		Ref (C45fb)
+one21			(MC12	FB)  : MUX 18		Ref (B24fb)
+thr20			(MC6	FB)  : MUX 22		Ref (B18fb)
+one12			(MC1	FB)  : MUX 24		Ref (A8fb)
+I23			(MC20	P)   : MUX 25		Ref (C35p)
+QSL20			(MC17	P)   : MUX 26		Ref (D62p)
+thr22			(MC5	FB)  : MUX 28		Ref (B17fb)
+two23			(MC13	FB)  : MUX 29		Ref (C44fb)
+thr23			(MC7	FB)  : MUX 30		Ref (B19fb)
+QSL21			(MC18	FB)  : MUX 33		Ref (GCLK)
+I22			(MC21	P)   : MUX 35		Ref (C36p)
+thr21			(MC8	FB)  : MUX 38		Ref (B20fb)
+
+FanIn assignment for block C [4]
+{
+one22,one20,one23,one21,
+}
+Multiplexer assignment for block C
+one22			(MC2	FB)  : MUX 2		Ref (B22fb)
+one20			(MC3	FB)  : MUX 4		Ref (B23fb)
+one23			(MC1	FB)  : MUX 8		Ref (B21fb)
+one21			(MC4	FB)  : MUX 18		Ref (B24fb)
+
+FanIn assignment for block D [23]
+{
+I21,I20,I23,I22,
+QSL20,QSL21,
+fou21,fou23,fou20,fou22,
+one22,one20,one23,one21,out_sel2,
+two22,two20,two21,thr20,thr23,thr22,two23,thr21,
+}
+Multiplexer assignment for block D
+two22			(MC14	FB)  : MUX 1		Ref (C45fb)
+one22			(MC6	FB)  : MUX 2		Ref (B22fb)
+I21			(MC19	P)   : MUX 3		Ref (C37p)
+one20			(MC7	FB)  : MUX 4		Ref (B23fb)
+two20			(MC16	FB)  : MUX 5		Ref (C48fb)
+fou21			(MC10	FB)  : MUX 7		Ref (B30fb)
+one23			(MC5	FB)  : MUX 8		Ref (B21fb)
+fou23			(MC9	FB)  : MUX 11		Ref (B29fb)
+fou20			(MC11	FB)  : MUX 13		Ref (B31fb)
+I20			(MC22	P)   : MUX 15		Ref (C40p)
+fou22			(MC12	FB)  : MUX 17		Ref (B32fb)
+one21			(MC8	FB)  : MUX 18		Ref (B24fb)
+two21			(MC15	FB)  : MUX 19		Ref (C47fb)
+thr20			(MC2	FB)  : MUX 22		Ref (B18fb)
+thr23			(MC3	FB)  : MUX 24		Ref (B19fb)
+I23			(MC20	P)   : MUX 25		Ref (C35p)
+QSL20			(MC17	P)   : MUX 26		Ref (D62p)
+thr22			(MC1	FB)  : MUX 28		Ref (B17fb)
+two23			(MC13	FB)  : MUX 29		Ref (C44fb)
+QSL21			(MC18	FB)  : MUX 33		Ref (GCLK)
+out_sel2		(MC23	P)   : MUX 34		Ref (C41p)
+I22			(MC21	P)   : MUX 35		Ref (C36p)
+thr21			(MC4	FB)  : MUX 38		Ref (B20fb)
+
+Creating JEDEC file Z:\HOME\FRANK\PROGETTI\NAMCO_03PP\CPLD\2X03PP.jed ...
+
+TQFP44 programmed logic:
+-----------------------------------
+O12 = ((!QSL10 & QSL11 & !out_sel1 & one12.Q)
+	# (QSL10 & QSL11 & !out_sel1 & thr12.Q)
+	# (QSL10 & !QSL11 & !out_sel1 & two12.Q)
+	# (out_sel1 & fou12.Q)
+	# (I12 & !QSL10 & !QSL11 & !out_sel1));
+
+O10 = ((!QSL10 & QSL11 & !out_sel1 & one10.Q)
+	# (QSL10 & QSL11 & !out_sel1 & thr10.Q)
+	# (QSL10 & !QSL11 & !out_sel1 & two10.Q)
+	# (out_sel1 & fou10.Q)
+	# (I10 & !QSL10 & !QSL11 & !out_sel1));
+
+O11 = ((!QSL10 & QSL11 & !out_sel1 & one11.Q)
+	# (QSL10 & QSL11 & !out_sel1 & thr11.Q)
+	# (QSL10 & !QSL11 & !out_sel1 & two11.Q)
+	# (out_sel1 & fou11.Q)
+	# (I11 & !QSL10 & !QSL11 & !out_sel1));
+
+O13 = ((!QSL10 & QSL11 & !out_sel1 & one13.Q)
+	# (QSL10 & QSL11 & !out_sel1 & thr13.Q)
+	# (QSL10 & !QSL11 & !out_sel1 & two13.Q)
+	# (out_sel1 & fou13.Q)
+	# (I13 & !QSL10 & !QSL11 & !out_sel1));
+
+O22 = ((!QSL20 & QSL21 & !out_sel2 & one22.Q)
+	# (QSL20 & QSL21 & !out_sel2 & thr22.Q)
+	# (QSL20 & !QSL21 & !out_sel2 & two22.Q)
+	# (out_sel2 & fou21.Q)
+	# (I22 & !QSL20 & !QSL21 & !out_sel2));
+
+O20 = ((!QSL20 & QSL21 & !out_sel2 & one20.Q)
+	# (QSL20 & QSL21 & !out_sel2 & thr20.Q)
+	# (QSL20 & !QSL21 & !out_sel2 & two20.Q)
+	# (out_sel2 & fou23.Q)
+	# (I20 & !QSL20 & !QSL21 & !out_sel2));
+
+O21 = ((!QSL20 & QSL21 & !out_sel2 & one21.Q)
+	# (QSL20 & QSL21 & !out_sel2 & thr21.Q)
+	# (QSL20 & !QSL21 & !out_sel2 & two21.Q)
+	# (out_sel2 & fou22.Q)
+	# (I21 & !QSL20 & !QSL21 & !out_sel2));
+
+O23 = ((!QSL20 & QSL21 & !out_sel2 & one23.Q)
+	# (QSL20 & QSL21 & !out_sel2 & thr23.Q)
+	# (QSL20 & !QSL21 & !out_sel2 & two23.Q)
+	# (out_sel2 & fou20.Q)
+	# (I23 & !QSL20 & !QSL21 & !out_sel2));
+
+fou11.D = ((!QSL10 & QSL11 & one11.Q)
+	# (QSL10 & !QSL11 & two11.Q)
+	# (QSL10 & QSL11 & thr11.Q)
+	# (I11 & !QSL10 & !QSL11));
+
+fou10.D = ((!QSL10 & QSL11 & one10.Q)
+	# (QSL10 & !QSL11 & two10.Q)
+	# (QSL10 & QSL11 & thr10.Q)
+	# (I10 & !QSL10 & !QSL11));
+
+fou12.D = ((!QSL10 & QSL11 & one12.Q)
+	# (QSL10 & !QSL11 & two12.Q)
+	# (QSL10 & QSL11 & thr12.Q)
+	# (I12 & !QSL10 & !QSL11));
+
+fou13.D = ((!QSL10 & QSL11 & one13.Q)
+	# (QSL10 & !QSL11 & two13.Q)
+	# (QSL10 & QSL11 & thr13.Q)
+	# (I13 & !QSL10 & !QSL11));
+
+fou20.D = ((!QSL20 & QSL21 & one23.Q)
+	# (QSL20 & !QSL21 & two23.Q)
+	# (QSL20 & QSL21 & thr23.Q)
+	# (I23 & !QSL20 & !QSL21));
+
+fou23.D = ((!QSL20 & QSL21 & one20.Q)
+	# (QSL20 & !QSL21 & two20.Q)
+	# (QSL20 & QSL21 & thr20.Q)
+	# (I20 & !QSL20 & !QSL21));
+
+fou21.D = ((!QSL20 & QSL21 & one22.Q)
+	# (QSL20 & !QSL21 & two22.Q)
+	# (QSL20 & QSL21 & thr22.Q)
+	# (I22 & !QSL20 & !QSL21));
+
+fou22.D = ((!QSL20 & QSL21 & one21.Q)
+	# (QSL20 & !QSL21 & two21.Q)
+	# (QSL20 & QSL21 & thr21.Q)
+	# (I21 & !QSL20 & !QSL21));
+
+one10.D = I10;
+
+one11.D = I11;
+
+one12.D = I12;
+
+one20.D = I20;
+
+one13.D = I13;
+
+one21.D = I21;
+
+one23.D = I23;
+
+one22.D = I22;
+
+thr10.D = two10.Q;
+
+thr11.D = two11.Q;
+
+thr13.D = two13.Q;
+
+thr12.D = two12.Q;
+
+thr20.D = two20.Q;
+
+thr21.D = two21.Q;
+
+thr22.D = two22.Q;
+
+two11.D = one11.Q;
+
+thr23.D = two23.Q;
+
+two10.D = one10.Q;
+
+two12.D = one12.Q;
+
+two20.D = one20.Q;
+
+two13.D = one13.Q;
+
+two21.D = one21.Q;
+
+two22.D = one22.Q;
+
+two23.D = one23.Q;
+
+fou11.C = clk;
+
+fou10.C = clk;
+
+fou12.C = clk;
+
+fou13.C = clk;
+
+fou20.C = clk;
+
+fou23.C = clk;
+
+fou21.C = clk;
+
+fou22.C = clk;
+
+one10.C = clk;
+
+one11.C = clk;
+
+one12.C = clk;
+
+one20.C = clk;
+
+one13.C = clk;
+
+one21.C = clk;
+
+one23.C = clk;
+
+one22.C = clk;
+
+thr10.C = clk;
+
+thr11.C = clk;
+
+thr13.C = clk;
+
+thr12.C = clk;
+
+thr20.C = clk;
+
+thr21.C = clk;
+
+thr22.C = clk;
+
+two11.C = clk;
+
+thr23.C = clk;
+
+two10.C = clk;
+
+two12.C = clk;
+
+two20.C = clk;
+
+two13.C = clk;
+
+two21.C = clk;
+
+two22.C = clk;
+
+two23.C = clk;
+
+
+TQFP44 Pin/Node Placement:
+------------------------------------
+Pin 1  = TDI; /* MC 8 */
+Pin 2  = O13; /* MC 5 */
+Pin 3  = O12; /* MC 4 */
+Pin 5  = O11; /* MC 3 */
+Pin 6  = O10; /* MC 1 */
+Pin 7  = TMS; /* MC 32 */
+Pin 8  = I10; /* MC 30 */
+Pin 10 = I11; /* MC 25 */ 
+Pin 11 = I13; /* MC 24 */ 
+Pin 12 = I12; /* MC 21 */ 
+Pin 19 = I23; /* MC 35 */ 
+Pin 20 = I22; /* MC 36 */ 
+Pin 21 = I21; /* MC 37 */ 
+Pin 22 = I20; /* MC 40 */ 
+Pin 23 = out_sel2; /* MC 41 */ 
+Pin 26 = TCK; /* MC 48 */ 
+Pin 28 = O23; /* MC 51 */ 
+Pin 30 = O22; /* MC 52 */ 
+Pin 31 = O21; /* MC 53 */ 
+Pin 32 = TDO; /* MC 56 */ 
+Pin 33 = O20; /* MC 57 */ 
+Pin 34 = QSL20; /* MC 62 */ 
+Pin 37 = QSL21;
+Pin 39 = out_sel1;
+Pin 40 = clk;
+Pin 43 = QSL10; /* MC 14 */ 
+Pin 44 = QSL11; /* MC 11 */ 
+PINNODE 602 = thr12; /* MC 2 Feedback */
+PINNODE 606 = thr11; /* MC 6 Feedback */
+PINNODE 607 = thr10; /* MC 7 Feedback */
+PINNODE 608 = one12; /* MC 8 Feedback */
+PINNODE 609 = one13; /* MC 9 Feedback */
+PINNODE 610 = one11; /* MC 10 Feedback */
+PINNODE 611 = one10; /* MC 11 Feedback */
+PINNODE 612 = fou12; /* MC 12 Feedback */
+PINNODE 613 = fou13; /* MC 13 Feedback */
+PINNODE 614 = fou10; /* MC 14 Feedback */
+PINNODE 615 = fou11; /* MC 15 Feedback */
+PINNODE 616 = thr13; /* MC 16 Feedback */
+PINNODE 617 = thr22; /* MC 17 Feedback */
+PINNODE 618 = thr20; /* MC 18 Feedback */
+PINNODE 619 = thr23; /* MC 19 Feedback */
+PINNODE 620 = thr21; /* MC 20 Feedback */
+PINNODE 621 = one23; /* MC 21 Feedback */
+PINNODE 622 = one22; /* MC 22 Feedback */
+PINNODE 623 = one20; /* MC 23 Feedback */
+PINNODE 624 = one21; /* MC 24 Feedback */
+PINNODE 625 = two13; /* MC 25 Feedback */
+PINNODE 626 = two10; /* MC 26 Feedback */
+PINNODE 627 = two12; /* MC 27 Feedback */
+PINNODE 628 = two11; /* MC 28 Feedback */
+PINNODE 629 = fou23; /* MC 29 Feedback */
+PINNODE 630 = fou21; /* MC 30 Feedback */
+PINNODE 631 = fou20; /* MC 31 Feedback */
+PINNODE 632 = fou22; /* MC 32 Feedback */
+PINNODE 644 = two23; /* MC 44 Feedback */
+PINNODE 645 = two22; /* MC 45 Feedback */
+PINNODE 647 = two21; /* MC 47 Feedback */
+PINNODE 648 = two20; /* MC 48 Feedback */
+
+** Resource Usage **
+
+
+DCERP Field = Summary of Allocations.
+|||||
+|||||_Preset [p,-]       ==  p = PT preset, - No Preset.
+||||
+||||__Reset [g,r,-]      ==  g= Global AR, r = PT reset, - No reset.
+|||
+|||___Clock Enable [e,-] ==  e = Product Term, - always enabled, - none.
+||
+||____Clock [c,g,-],     ==  c = Product term, g = Global term, - No Clock.
+|
+|_____Type [C,D,L,T],    ==  Register type C= combin, D=dff, L=latch, T=tff.
+
+For input only = INPUT.
+
+MCell Pin# Oe   PinDrive  DCERP  FBDrive  DCERP  Foldback  CascadeOut     TotPT output_slew
+MC1   6    on   O10       C----  --              NA        --             5     slow
+MC2   0         --               thr12    Dg---  --        --             1     slow
+MC3   5    on   O11       C----  --              NA        --             5     slow
+MC4   3    on   O12       C----  --              NA        --             5     slow
+MC5   2    on   O13       C----  --              NA        --             5     slow
+MC6   0         --               thr11    Dg---  --        --             1     slow
+MC7   0         --               thr10    Dg---  --        --             1     slow
+MC8   1    --   TDI       INPUT  one12    Dg---  --        --             1     slow
+MC9   0         --               one13    Dg---  --        --             1     slow
+MC10  0         --               one11    Dg---  --        --             1     slow
+MC11  44   --   QSL11     INPUT  one10    Dg---  --        --             1     slow
+MC12  0         --               fou12    Dg---  --        --             4     slow
+MC13  0         --               fou13    Dg---  --        --             4     slow
+MC14  43   --   QSL10     INPUT  fou10    Dg---  --        --             4     slow
+MC15  0         --               fou11    Dg---  --        --             4     slow
+MC16  42        --               thr13    Dg---  --        --             1     slow
+MC17  15        --               thr22    Dg---  --        --             1     slow
+MC18  0         --               thr20    Dg---  --        --             1     slow
+MC19  14        --               thr23    Dg---  --        --             1     slow
+MC20  13        --               thr21    Dg---  --        --             1     slow
+MC21  12   --   I12       INPUT  one23    Dg---  --        --             1     slow
+MC22  0         --               one22    Dg---  --        --             1     slow
+MC23  0         --               one20    Dg---  --        --             1     slow
+MC24  11   --   I13       INPUT  one21    Dg---  --        --             1     slow
+MC25  10   --   I11       INPUT  two13    Dg---  --        --             1     slow
+MC26  0         --               two10    Dg---  --        --             1     slow
+MC27  0         --               two12    Dg---  --        --             1     slow
+MC28  0         --               two11    Dg---  --        --             1     slow
+MC29  0         --               fou23    Dg---  --        --             4     slow
+MC30  8    --   I10       INPUT  fou21    Dg---  --        --             4     slow
+MC31  0         --               fou20    Dg---  --        --             4     slow
+MC32  7    --   TMS       INPUT  fou22    Dg---  --        --             4     slow
+MC33  18        --               --              --        --             0     slow
+MC34  0         --               --              --        --             0     slow
+MC35  19   --   I23       INPUT  --              --        --             0     slow
+MC36  20   --   I22       INPUT  --              --        --             0     slow
+MC37  21   --   I21       INPUT  --              --        --             0     slow
+MC38  0         --               --              --        --             0     slow
+MC39  0         --               --              --        --             0     slow
+MC40  22   --   I20       INPUT  --              --        --             0     slow
+MC41  23   --   out_sel2  INPUT  --              --        --             0     slow
+MC42  0         --               --              --        --             0     slow
+MC43  0         --               --              --        --             0     slow
+MC44  0         --               two23    Dg---  --        --             1     slow
+MC45  0         --               two22    Dg---  --        --             1     slow
+MC46  25        --               --              --        --             0     slow
+MC47  0         --               two21    Dg---  --        --             1     slow
+MC48  26   --   TCK       INPUT  two20    Dg---  --        --             1     slow
+MC49  27        --               --              --        --             0     slow
+MC50  0         --               --              --        --             0     slow
+MC51  28   on   O23       C----  --              NA        --             5     slow
+MC52  30   on   O22       C----  --              NA        --             5     slow
+MC53  31   on   O21       C----  --              NA        --             5     slow
+MC54  0         --               --              --        --             0     slow
+MC55  0         --               --              --        --             0     slow
+MC56  32   --   TDO       INPUT  --              --        --             0     slow
+MC57  33   on   O20       C----  --              NA        --             5     slow
+MC58  0         --               --              --        --             0     slow
+MC59  0         --               --              --        --             0     slow
+MC60  0         --               --              --        --             0     slow
+MC61  0         --               --              --        --             0     slow
+MC62  34   --   QSL20     INPUT  --              --        --             0     slow
+MC63  0         --               --              --        --             0     slow
+MC64  35        --               --              --        --             0     slow
+MC0   40        clk       INPUT  --              --        --             0     slow
+MC0   39        out_sel1  INPUT  --              --        --             0     slow
+MC0   38        --               --              --        --             0     slow
+MC0   37        QSL21     INPUT  --              --        --             0     slow
+
+Logic Array Block	Logic Cells	I/O Pins	Foldbacks	TotalPT		FanIN	Cascades
+A: LC1	- LC16		16/16(100%)	7/16(43%)	0/16(0%)	44/80(55%)	(23)	0
+B: LC17	- LC32		16/16(100%)	5/16(31%)	0/16(0%)	28/80(35%)	(22)	0
+C: LC33	- LC48		4/16(25%)	6/16(37%)	0/16(0%)	4/80(5%)	(4)	0
+D: LC49	- LC64		4/16(25%)	6/16(37%)	0/16(0%)	20/80(25%)	(23)	0
+
+Total dedicated input used:	3/4 	(75%)
+Total I/O pins used		24/32 	(75%)
+Total Logic cells used 		40/64 	(62%)
+Total Flip-Flop used 		32/64 	(50%)
+Total Foldback logic used 	0/64 	(0%)
+Total Nodes+FB/MCells 		40/64 	(62%)
+Total cascade used 		0
+Total input pins 		19
+Total output pins 		8
+Total Pts 			96
+Creating pla file Z:\HOME\FRANK\PROGETTI\NAMCO_03PP\CPLD\2X03PP.tt3 with 0 inputs 0 outputs, 0 pins 0 nodes and 0 pterms...
+
+----------------  End fitter, Design FITS
+$Device TQFP44 fits 
+FIT1504 completed in 0.00 seconds

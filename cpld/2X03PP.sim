@@ -1,0 +1,397 @@
+%SIGNAL
+PIN   8 =  I10 
+PIN  10 =  I11 
+PIN  12 =  I12 
+PIN  11 =  I13 
+PIN  22 =  I20 
+PIN  21 =  I21 
+PIN  20 =  I22 
+PIN  19 =  I23 
+PIN   6 =  O10 
+PIN   5 =  O11 
+PIN   3 =  O12 
+PIN   2 =  O13 
+PIN  33 =  O20 
+PIN  31 =  O21 
+PIN  30 =  O22 
+PIN  28 =  O23 
+PIN  43 =  QSL10 
+PIN  44 =  QSL11 
+PIN  34 =  QSL20 
+PIN  37 =  QSL21 
+PIN  40 =  clk 
+PIN   0 =  fou10 
+PIN   0 =  fou11 
+PIN   0 =  fou12 
+PIN   0 =  fou13 
+PIN   0 =  fou20 
+PIN   0 =  fou21 
+PIN   0 =  fou22 
+PIN   0 =  fou23 
+PIN   0 =  one10 
+PIN   0 =  one11 
+PIN   0 =  one12 
+PIN   0 =  one13 
+PIN   0 =  one20 
+PIN   0 =  one21 
+PIN   0 =  one22 
+PIN   0 =  one23 
+PIN  39 =  out_sel1 
+PIN  23 =  out_sel2 
+PIN   0 =  thr10 
+PIN   0 =  thr11 
+PIN   0 =  thr12 
+PIN   0 =  thr13 
+PIN   0 =  thr20 
+PIN   0 =  thr21 
+PIN   0 =  thr22 
+PIN   0 =  thr23 
+PIN   0 =  two10 
+PIN   0 =  two11 
+PIN   0 =  two12 
+PIN   0 =  two13 
+PIN   0 =  two20 
+PIN   0 =  two21 
+PIN   0 =  two22 
+PIN   0 =  two23 
+%END
+
+%FIELD
+FIELD D1 = d13,d12,d11,d10
+FIELD D2 = d23,d22,d21,d20
+FIELD FOU1 = fou13,fou12,fou11,fou10
+FIELD FOU2 = fou20,fou21,fou22,fou23
+FIELD I1 = I13,I12,I11,I10
+FIELD I2 = I23,I22,I21,I20
+FIELD O1 = O13,O12,O11,O10
+FIELD O2 = O23,O22,O21,O20
+FIELD ONE1 = one13,one12,one11,one10
+FIELD ONE2 = one23,one22,one21,one20
+FIELD THR1 = thr13,thr12,thr11,thr10
+FIELD THR2 = thr23,thr22,thr21,thr20
+FIELD TWO1 = two13,two12,two11,two10
+FIELD TWO2 = two23,two22,two21,two20
+%END
+
+%EQUATION
+O10 =>
+    I10 & !QSL10 & !QSL11 & !out_sel1
+  # !QSL10 & QSL11 & one10 & !out_sel1
+  # QSL10 & QSL11 & !out_sel1 & thr10
+  # QSL10 & !QSL11 & !out_sel1 & two10
+  # fou10 & out_sel1
+
+O11 =>
+    I11 & !QSL10 & !QSL11 & !out_sel1
+  # !QSL10 & QSL11 & one11 & !out_sel1
+  # QSL10 & QSL11 & !out_sel1 & thr11
+  # QSL10 & !QSL11 & !out_sel1 & two11
+  # fou11 & out_sel1
+
+O12 =>
+    I12 & !QSL10 & !QSL11 & !out_sel1
+  # !QSL10 & QSL11 & one12 & !out_sel1
+  # QSL10 & QSL11 & !out_sel1 & thr12
+  # QSL10 & !QSL11 & !out_sel1 & two12
+  # fou12 & out_sel1
+
+O13 =>
+    I13 & !QSL10 & !QSL11 & !out_sel1
+  # !QSL10 & QSL11 & one13 & !out_sel1
+  # QSL10 & QSL11 & !out_sel1 & thr13
+  # QSL10 & !QSL11 & !out_sel1 & two13
+  # fou13 & out_sel1
+
+O20 =>
+    I20 & !QSL20 & !QSL21 & !out_sel2
+  # !QSL20 & QSL21 & one20 & !out_sel2
+  # QSL20 & QSL21 & !out_sel2 & thr20
+  # QSL20 & !QSL21 & !out_sel2 & two20
+  # fou23 & out_sel2
+
+O21 =>
+    I21 & !QSL20 & !QSL21 & !out_sel2
+  # !QSL20 & QSL21 & one21 & !out_sel2
+  # QSL20 & QSL21 & !out_sel2 & thr21
+  # QSL20 & !QSL21 & !out_sel2 & two21
+  # fou22 & out_sel2
+
+O22 =>
+    I22 & !QSL20 & !QSL21 & !out_sel2
+  # !QSL20 & QSL21 & one22 & !out_sel2
+  # QSL20 & QSL21 & !out_sel2 & thr22
+  # QSL20 & !QSL21 & !out_sel2 & two22
+  # fou21 & out_sel2
+
+O23 =>
+    I23 & !QSL20 & !QSL21 & !out_sel2
+  # !QSL20 & QSL21 & one23 & !out_sel2
+  # QSL20 & QSL21 & !out_sel2 & thr23
+  # QSL20 & !QSL21 & !out_sel2 & two23
+  # fou20 & out_sel2
+
+d10 =>
+    I10 & !QSL10 & !QSL11
+  # !QSL10 & QSL11 & one10
+  # QSL10 & !QSL11 & two10
+  # QSL10 & QSL11 & thr10
+
+d11 =>
+    I11 & !QSL10 & !QSL11
+  # !QSL10 & QSL11 & one11
+  # QSL10 & !QSL11 & two11
+  # QSL10 & QSL11 & thr11
+
+d12 =>
+    I12 & !QSL10 & !QSL11
+  # !QSL10 & QSL11 & one12
+  # QSL10 & !QSL11 & two12
+  # QSL10 & QSL11 & thr12
+
+d13 =>
+    I13 & !QSL10 & !QSL11
+  # !QSL10 & QSL11 & one13
+  # QSL10 & !QSL11 & two13
+  # QSL10 & QSL11 & thr13
+
+d20 =>
+    I20 & !QSL20 & !QSL21
+  # !QSL20 & QSL21 & one20
+  # QSL20 & !QSL21 & two20
+  # QSL20 & QSL21 & thr20
+
+d21 =>
+    I21 & !QSL20 & !QSL21
+  # !QSL20 & QSL21 & one21
+  # QSL20 & !QSL21 & two21
+  # QSL20 & QSL21 & thr21
+
+d22 =>
+    I22 & !QSL20 & !QSL21
+  # !QSL20 & QSL21 & one22
+  # QSL20 & !QSL21 & two22
+  # QSL20 & QSL21 & thr22
+
+d23 =>
+    I23 & !QSL20 & !QSL21
+  # !QSL20 & QSL21 & one23
+  # QSL20 & !QSL21 & two23
+  # QSL20 & QSL21 & thr23
+
+fou10.d  =>
+    I10 & !QSL10 & !QSL11
+  # !QSL10 & QSL11 & one10
+  # QSL10 & !QSL11 & two10
+  # QSL10 & QSL11 & thr10
+
+fou10.ck  =>
+    clk
+
+fou11.d  =>
+    I11 & !QSL10 & !QSL11
+  # !QSL10 & QSL11 & one11
+  # QSL10 & !QSL11 & two11
+  # QSL10 & QSL11 & thr11
+
+fou11.ck  =>
+    clk
+
+fou12.d  =>
+    I12 & !QSL10 & !QSL11
+  # !QSL10 & QSL11 & one12
+  # QSL10 & !QSL11 & two12
+  # QSL10 & QSL11 & thr12
+
+fou12.ck  =>
+    clk
+
+fou13.d  =>
+    I13 & !QSL10 & !QSL11
+  # !QSL10 & QSL11 & one13
+  # QSL10 & !QSL11 & two13
+  # QSL10 & QSL11 & thr13
+
+fou13.ck  =>
+    clk
+
+fou20.d  =>
+    I23 & !QSL20 & !QSL21
+  # !QSL20 & QSL21 & one23
+  # QSL20 & !QSL21 & two23
+  # QSL20 & QSL21 & thr23
+
+fou20.ck  =>
+    clk
+
+fou21.d  =>
+    I22 & !QSL20 & !QSL21
+  # !QSL20 & QSL21 & one22
+  # QSL20 & !QSL21 & two22
+  # QSL20 & QSL21 & thr22
+
+fou21.ck  =>
+    clk
+
+fou22.d  =>
+    I21 & !QSL20 & !QSL21
+  # !QSL20 & QSL21 & one21
+  # QSL20 & !QSL21 & two21
+  # QSL20 & QSL21 & thr21
+
+fou22.ck  =>
+    clk
+
+fou23.d  =>
+    I20 & !QSL20 & !QSL21
+  # !QSL20 & QSL21 & one20
+  # QSL20 & !QSL21 & two20
+  # QSL20 & QSL21 & thr20
+
+fou23.ck  =>
+    clk
+
+one10.d  =>
+    I10
+
+one10.ck  =>
+    clk
+
+one11.d  =>
+    I11
+
+one11.ck  =>
+    clk
+
+one12.d  =>
+    I12
+
+one12.ck  =>
+    clk
+
+one13.d  =>
+    I13
+
+one13.ck  =>
+    clk
+
+one20.d  =>
+    I20
+
+one20.ck  =>
+    clk
+
+one21.d  =>
+    I21
+
+one21.ck  =>
+    clk
+
+one22.d  =>
+    I22
+
+one22.ck  =>
+    clk
+
+one23.d  =>
+    I23
+
+one23.ck  =>
+    clk
+
+thr10.d  =>
+    two10
+
+thr10.ck  =>
+    clk
+
+thr11.d  =>
+    two11
+
+thr11.ck  =>
+    clk
+
+thr12.d  =>
+    two12
+
+thr12.ck  =>
+    clk
+
+thr13.d  =>
+    two13
+
+thr13.ck  =>
+    clk
+
+thr20.d  =>
+    two20
+
+thr20.ck  =>
+    clk
+
+thr21.d  =>
+    two21
+
+thr21.ck  =>
+    clk
+
+thr22.d  =>
+    two22
+
+thr22.ck  =>
+    clk
+
+thr23.d  =>
+    two23
+
+thr23.ck  =>
+    clk
+
+two10.d  =>
+    one10
+
+two10.ck  =>
+    clk
+
+two11.d  =>
+    one11
+
+two11.ck  =>
+    clk
+
+two12.d  =>
+    one12
+
+two12.ck  =>
+    clk
+
+two13.d  =>
+    one13
+
+two13.ck  =>
+    clk
+
+two20.d  =>
+    one20
+
+two20.ck  =>
+    clk
+
+two21.d  =>
+    one21
+
+two21.ck  =>
+    clk
+
+two22.d  =>
+    one22
+
+two22.ck  =>
+    clk
+
+two23.d  =>
+    one23
+
+two23.ck  =>
+    clk
+
+%END
