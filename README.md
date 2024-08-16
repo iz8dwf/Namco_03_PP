@@ -9,4 +9,9 @@ for more information. Pole Position only uses 4 bits of the 6 bits, so that's
 what I've implemented. A general purpose replacement with full 6 bits can 
 in theory be implemented on a single atf1502 but I haven't tested it.
 
+(Fun) Fact: one original 03XX IC has been reverse engineered with the help of
+a Commodore PET 3032 machine using its 8 bit bi-directional user port and a few
+Basic programs. These are "static" ICs so clock can be toggled even at a few seconds
+intervals if needed.
+
 USE AT YOUR OWN RISK
