@@ -19,7 +19,8 @@ PROPERTY ATMEL {pin_keep OFF} ; /* Disables pin-keeper circuits */
    the other two inputs of 6L are connected to the outputs of 5L that
    correspond to the grounded inputs */
 
-/* This PLD only implements 2 x 4 bits wide FIFOs */
+/* This PLD only implements 2 x 4 bits wide FIFOs 
+   using one clock signal for both FIFOs */
 
 /* *************** INPUT PINS *********************/
 PIN    8  = I10      ; /* 5L input side */ 
