@@ -14,4 +14,6 @@ a Commodore PET 3032 machine using its 8 bit bi-directional user port and a few
 Basic programs. These are "static" ICs so clock can be toggled even at a few seconds
 intervals if needed.
 
+THE JTAG PINOUT IS NOT STANDARD!
+
 USE AT YOUR OWN RISK
