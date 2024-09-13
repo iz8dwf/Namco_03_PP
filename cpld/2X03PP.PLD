@@ -1,7 +1,7 @@
 Name     2X03PP ;
 PartNo   00 ;
-Date     08/07/2024 ;
-Revision 01 ;
+Date     13/09/2024 ;
+Revision 02 ;
 Designer IZ8DWF ;
 Company  IZ8DWF ;
 Assembly None ;
@@ -109,7 +109,7 @@ field THR1=[thr13..thr10];
 field THR2=[thr23..thr20];
 
 FIELD FOU1=[fou13..fou10];
-FIELD FOU2=[fou20..fou23];
+FIELD FOU2=[fou23..fou20];
 
 FIELD D1=[d13..d10];
 FIELD D2=[d23..d20];

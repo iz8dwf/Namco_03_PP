@@ -1,7 +1,7 @@
-Atmel ATF1504AS Fitter Version 1.8.7.8 ,running Sat Jul 13 15:34:44 2024
+Atmel ATF1504AS Fitter Version 1.8.7.8 ,running Fri Sep 13 20:40:41 2024
 
 
-fit1504 Z:\HOME\FRANK\PROGETTI\NAMCO_03PP\CPLD\2X03PP.tt2 -CUPL -dev P1504T44 -JTAG ON
+fit1504 Z:\HOME\FRANK\PROGETTI\GITHUB\NAMCO_03_PP\CPLD\2X03PP.tt2 -CUPL -dev P1504T44 -JTAG ON
 
 
 ****** Initial fitting strategy and property ******
@@ -208,33 +208,33 @@ one12			(MC4	FB)  : MUX 38		Ref (A8fb)
 
 FanIn assignment for block B [22]
 {
-I21,I20,I23,I22,
+I20,I21,I23,I22,
 QSL20,QSL21,
-one11,one22,one20,one13,one23,one10,one21,one12,
-two21,two20,two22,thr20,thr22,two23,thr23,thr21,
+one22,one20,one13,one23,one11,one10,one21,one12,
+two22,two21,two20,thr20,thr22,two23,thr23,thr21,
 }
 Multiplexer assignment for block B
-one11			(MC3	FB)  : MUX 1		Ref (A10fb)
+two22			(MC14	FB)  : MUX 1		Ref (C45fb)
 one22			(MC10	FB)  : MUX 2		Ref (B22fb)
-I21			(MC19	P)   : MUX 3		Ref (C37p)
+I20			(MC20	P)   : MUX 3		Ref (C40p)
 one20			(MC11	FB)  : MUX 4		Ref (B23fb)
 one13			(MC2	FB)  : MUX 5		Ref (A9fb)
 two21			(MC15	FB)  : MUX 7		Ref (C47fb)
 one23			(MC9	FB)  : MUX 8		Ref (B21fb)
-two20			(MC16	FB)  : MUX 9		Ref (C48fb)
+one11			(MC3	FB)  : MUX 9		Ref (A10fb)
 one10			(MC4	FB)  : MUX 11		Ref (A11fb)
-I20			(MC22	P)   : MUX 15		Ref (C40p)
-two22			(MC14	FB)  : MUX 17		Ref (C45fb)
+two20			(MC16	FB)  : MUX 15		Ref (C48fb)
+I21			(MC21	P)   : MUX 17		Ref (C37p)
 one21			(MC12	FB)  : MUX 18		Ref (B24fb)
 thr20			(MC6	FB)  : MUX 22		Ref (B18fb)
 one12			(MC1	FB)  : MUX 24		Ref (A8fb)
-I23			(MC20	P)   : MUX 25		Ref (C35p)
+I23			(MC22	P)   : MUX 25		Ref (C35p)
 QSL20			(MC17	P)   : MUX 26		Ref (D62p)
 thr22			(MC5	FB)  : MUX 28		Ref (B17fb)
 two23			(MC13	FB)  : MUX 29		Ref (C44fb)
 thr23			(MC7	FB)  : MUX 30		Ref (B19fb)
 QSL21			(MC18	FB)  : MUX 33		Ref (GCLK)
-I22			(MC21	P)   : MUX 35		Ref (C36p)
+I22			(MC19	P)   : MUX 35		Ref (C36p)
 thr21			(MC8	FB)  : MUX 38		Ref (B20fb)
 
 FanIn assignment for block C [4]
@@ -249,38 +249,38 @@ one21			(MC4	FB)  : MUX 18		Ref (B24fb)
 
 FanIn assignment for block D [23]
 {
-I21,I20,I23,I22,
+I20,I21,I23,I22,
 QSL20,QSL21,
-fou21,fou23,fou20,fou22,
+fou22,fou23,fou20,fou21,
 one22,one20,one23,one21,out_sel2,
 two22,two20,two21,thr20,thr23,thr22,two23,thr21,
 }
 Multiplexer assignment for block D
 two22			(MC14	FB)  : MUX 1		Ref (C45fb)
 one22			(MC6	FB)  : MUX 2		Ref (B22fb)
-I21			(MC19	P)   : MUX 3		Ref (C37p)
+I20			(MC20	P)   : MUX 3		Ref (C40p)
 one20			(MC7	FB)  : MUX 4		Ref (B23fb)
-two20			(MC16	FB)  : MUX 5		Ref (C48fb)
-fou21			(MC10	FB)  : MUX 7		Ref (B30fb)
+fou22			(MC12	FB)  : MUX 5		Ref (B32fb)
 one23			(MC5	FB)  : MUX 8		Ref (B21fb)
+two20			(MC16	FB)  : MUX 9		Ref (C48fb)
 fou23			(MC9	FB)  : MUX 11		Ref (B29fb)
 fou20			(MC11	FB)  : MUX 13		Ref (B31fb)
-I20			(MC22	P)   : MUX 15		Ref (C40p)
-fou22			(MC12	FB)  : MUX 17		Ref (B32fb)
+fou21			(MC10	FB)  : MUX 15		Ref (B30fb)
+I21			(MC21	P)   : MUX 17		Ref (C37p)
 one21			(MC8	FB)  : MUX 18		Ref (B24fb)
 two21			(MC15	FB)  : MUX 19		Ref (C47fb)
 thr20			(MC2	FB)  : MUX 22		Ref (B18fb)
 thr23			(MC3	FB)  : MUX 24		Ref (B19fb)
-I23			(MC20	P)   : MUX 25		Ref (C35p)
+I23			(MC22	P)   : MUX 25		Ref (C35p)
 QSL20			(MC17	P)   : MUX 26		Ref (D62p)
 thr22			(MC1	FB)  : MUX 28		Ref (B17fb)
 two23			(MC13	FB)  : MUX 29		Ref (C44fb)
 QSL21			(MC18	FB)  : MUX 33		Ref (GCLK)
 out_sel2		(MC23	P)   : MUX 34		Ref (C41p)
-I22			(MC21	P)   : MUX 35		Ref (C36p)
+I22			(MC19	P)   : MUX 35		Ref (C36p)
 thr21			(MC4	FB)  : MUX 38		Ref (B20fb)
 
-Creating JEDEC file Z:\HOME\FRANK\PROGETTI\NAMCO_03PP\CPLD\2X03PP.jed ...
+Creating JEDEC file Z:\HOME\FRANK\PROGETTI\GITHUB\NAMCO_03_PP\CPLD\2X03PP.jed ...
 
 TQFP44 programmed logic:
 -----------------------------------
@@ -311,25 +311,25 @@ O13 = ((!QSL10 & QSL11 & !out_sel1 & one13.Q)
 O22 = ((!QSL20 & QSL21 & !out_sel2 & one22.Q)
 	# (QSL20 & QSL21 & !out_sel2 & thr22.Q)
 	# (QSL20 & !QSL21 & !out_sel2 & two22.Q)
-	# (out_sel2 & fou21.Q)
+	# (out_sel2 & fou22.Q)
 	# (I22 & !QSL20 & !QSL21 & !out_sel2));
 
 O20 = ((!QSL20 & QSL21 & !out_sel2 & one20.Q)
 	# (QSL20 & QSL21 & !out_sel2 & thr20.Q)
 	# (QSL20 & !QSL21 & !out_sel2 & two20.Q)
-	# (out_sel2 & fou23.Q)
+	# (out_sel2 & fou20.Q)
 	# (I20 & !QSL20 & !QSL21 & !out_sel2));
 
 O21 = ((!QSL20 & QSL21 & !out_sel2 & one21.Q)
 	# (QSL20 & QSL21 & !out_sel2 & thr21.Q)
 	# (QSL20 & !QSL21 & !out_sel2 & two21.Q)
-	# (out_sel2 & fou22.Q)
+	# (out_sel2 & fou21.Q)
 	# (I21 & !QSL20 & !QSL21 & !out_sel2));
 
 O23 = ((!QSL20 & QSL21 & !out_sel2 & one23.Q)
 	# (QSL20 & QSL21 & !out_sel2 & thr23.Q)
 	# (QSL20 & !QSL21 & !out_sel2 & two23.Q)
-	# (out_sel2 & fou20.Q)
+	# (out_sel2 & fou23.Q)
 	# (I23 & !QSL20 & !QSL21 & !out_sel2));
 
 fou11.D = ((!QSL10 & QSL11 & one11.Q)
@@ -352,25 +352,25 @@ fou13.D = ((!QSL10 & QSL11 & one13.Q)
 	# (QSL10 & QSL11 & thr13.Q)
 	# (I13 & !QSL10 & !QSL11));
 
-fou20.D = ((!QSL20 & QSL21 & one23.Q)
-	# (QSL20 & !QSL21 & two23.Q)
-	# (QSL20 & QSL21 & thr23.Q)
-	# (I23 & !QSL20 & !QSL21));
-
-fou23.D = ((!QSL20 & QSL21 & one20.Q)
+fou20.D = ((!QSL20 & QSL21 & one20.Q)
 	# (QSL20 & !QSL21 & two20.Q)
 	# (QSL20 & QSL21 & thr20.Q)
 	# (I20 & !QSL20 & !QSL21));
 
-fou21.D = ((!QSL20 & QSL21 & one22.Q)
-	# (QSL20 & !QSL21 & two22.Q)
-	# (QSL20 & QSL21 & thr22.Q)
-	# (I22 & !QSL20 & !QSL21));
+fou23.D = ((!QSL20 & QSL21 & one23.Q)
+	# (QSL20 & !QSL21 & two23.Q)
+	# (QSL20 & QSL21 & thr23.Q)
+	# (I23 & !QSL20 & !QSL21));
 
-fou22.D = ((!QSL20 & QSL21 & one21.Q)
+fou21.D = ((!QSL20 & QSL21 & one21.Q)
 	# (QSL20 & !QSL21 & two21.Q)
 	# (QSL20 & QSL21 & thr21.Q)
 	# (I21 & !QSL20 & !QSL21));
+
+fou22.D = ((!QSL20 & QSL21 & one22.Q)
+	# (QSL20 & !QSL21 & two22.Q)
+	# (QSL20 & QSL21 & thr22.Q)
+	# (I22 & !QSL20 & !QSL21));
 
 one10.D = I10;
 
@@ -650,7 +650,7 @@ Total cascade used 		0
 Total input pins 		19
 Total output pins 		8
 Total Pts 			96
-Creating pla file Z:\HOME\FRANK\PROGETTI\NAMCO_03PP\CPLD\2X03PP.tt3 with 0 inputs 0 outputs, 0 pins 0 nodes and 0 pterms...
+Creating pla file Z:\HOME\FRANK\PROGETTI\GITHUB\NAMCO_03_PP\CPLD\2X03PP.tt3 with 0 inputs 0 outputs, 0 pins 0 nodes and 0 pterms...
 
 ----------------  End fitter, Design FITS
 $Device TQFP44 fits 

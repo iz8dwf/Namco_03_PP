@@ -60,7 +60,7 @@ PIN   0 =  two23
 FIELD D1 = d13,d12,d11,d10
 FIELD D2 = d23,d22,d21,d20
 FIELD FOU1 = fou13,fou12,fou11,fou10
-FIELD FOU2 = fou20,fou21,fou22,fou23
+FIELD FOU2 = fou23,fou22,fou21,fou20
 FIELD I1 = I13,I12,I11,I10
 FIELD I2 = I23,I22,I21,I20
 FIELD O1 = O13,O12,O11,O10
@@ -107,28 +107,28 @@ O20 =>
   # !QSL20 & QSL21 & one20 & !out_sel2
   # QSL20 & QSL21 & !out_sel2 & thr20
   # QSL20 & !QSL21 & !out_sel2 & two20
-  # fou23 & out_sel2
+  # fou20 & out_sel2
 
 O21 =>
     I21 & !QSL20 & !QSL21 & !out_sel2
   # !QSL20 & QSL21 & one21 & !out_sel2
   # QSL20 & QSL21 & !out_sel2 & thr21
   # QSL20 & !QSL21 & !out_sel2 & two21
-  # fou22 & out_sel2
+  # fou21 & out_sel2
 
 O22 =>
     I22 & !QSL20 & !QSL21 & !out_sel2
   # !QSL20 & QSL21 & one22 & !out_sel2
   # QSL20 & QSL21 & !out_sel2 & thr22
   # QSL20 & !QSL21 & !out_sel2 & two22
-  # fou21 & out_sel2
+  # fou22 & out_sel2
 
 O23 =>
     I23 & !QSL20 & !QSL21 & !out_sel2
   # !QSL20 & QSL21 & one23 & !out_sel2
   # QSL20 & QSL21 & !out_sel2 & thr23
   # QSL20 & !QSL21 & !out_sel2 & two23
-  # fou20 & out_sel2
+  # fou23 & out_sel2
 
 d10 =>
     I10 & !QSL10 & !QSL11
@@ -215,37 +215,37 @@ fou13.ck  =>
     clk
 
 fou20.d  =>
-    I23 & !QSL20 & !QSL21
-  # !QSL20 & QSL21 & one23
-  # QSL20 & !QSL21 & two23
-  # QSL20 & QSL21 & thr23
+    I20 & !QSL20 & !QSL21
+  # !QSL20 & QSL21 & one20
+  # QSL20 & !QSL21 & two20
+  # QSL20 & QSL21 & thr20
 
 fou20.ck  =>
     clk
 
 fou21.d  =>
-    I22 & !QSL20 & !QSL21
-  # !QSL20 & QSL21 & one22
-  # QSL20 & !QSL21 & two22
-  # QSL20 & QSL21 & thr22
-
-fou21.ck  =>
-    clk
-
-fou22.d  =>
     I21 & !QSL20 & !QSL21
   # !QSL20 & QSL21 & one21
   # QSL20 & !QSL21 & two21
   # QSL20 & QSL21 & thr21
 
+fou21.ck  =>
+    clk
+
+fou22.d  =>
+    I22 & !QSL20 & !QSL21
+  # !QSL20 & QSL21 & one22
+  # QSL20 & !QSL21 & two22
+  # QSL20 & QSL21 & thr22
+
 fou22.ck  =>
     clk
 
 fou23.d  =>
-    I20 & !QSL20 & !QSL21
-  # !QSL20 & QSL21 & one20
-  # QSL20 & !QSL21 & two20
-  # QSL20 & QSL21 & thr20
+    I23 & !QSL20 & !QSL21
+  # !QSL20 & QSL21 & one23
+  # QSL20 & !QSL21 & two23
+  # QSL20 & QSL21 & thr23
 
 fou23.ck  =>
     clk
